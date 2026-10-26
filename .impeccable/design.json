@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T00:00:00+07:00",
+  "title": "Design System: PKPN — Pusat Kajian Pariwisata Nusantara",
+  "extensions": {
+    "colorMeta": {
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Navy Deep",
+        "canonical": "#07131F",
+        "usage": "Dark hero gradient origin, caption overlay rgba(7,19,31,0.88), ::selection text"
+      },
+      "navy": {
+        "role": "primary",
+        "displayName": "Navy",
+        "canonical": "#0B1B2B",
+        "tonalRamp": [
+          "oklch(14% 0.03 240)",
+          "oklch(22% 0.035 240)",
+          "oklch(30% 0.038 241)",
+          "oklch(39% 0.04 242)",
+          "oklch(47% 0.038 243)",
+          "oklch(58% 0.032 245)",
+          "oklch(72% 0.024 246)",
+          "oklch(90% 0.012 246)"
+        ],
+        "usage": "Headings, card titles, body-strong, btn-outline-dark fills; footer ground"
+      },
+      "navy-surface": {
+        "role": "primary",
+        "displayName": "Navy Surface",
+        "canonical": "#122436",
+        "usage": "Elevated navy backing behind media/frames"
+      },
+      "teal": {
+        "role": "primary",
+        "displayName": "Teal",
+        "canonical": "#0D5C52",
+        "tonalRamp": [
+          "oklch(16% 0.032 182)",
+          "oklch(26% 0.05 178)",
+          "oklch(34% 0.065 175)",
+          "oklch(43% 0.078 172)",
+          "oklch(49% 0.084 170)",
+          "oklch(60% 0.082 168)",
+          "oklch(76% 0.062 166)",
+          "oklch(93% 0.028 164)"
+        ],
+        "usage": "THE single accent: buttons, links, icon tiles, badges, chips-active, progress fills, count suffixes"
+      },
+      "teal-dark": {
+        "role": "primary",
+        "displayName": "Teal Dark",
+        "canonical": "#073D36",
+        "usage": "Hover deepen on teal links"
+      },
+      "teal-light": {
+        "role": "primary",
+        "displayName": "Teal Light",
+        "canonical": "rgba(13, 92, 82, 0.08)",
+        "usage": "Icon tile + badge fills, search focus ring 0 0 0 3px, ::selection"
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Data Gold",
+        "canonical": "#B48424",
+        "tonalRamp": [
+          "oklch(20% 0.05 75)",
+          "oklch(30% 0.075 76)",
+          "oklch(40% 0.09 78)",
+          "oklch(50% 0.1 80)",
+          "oklch(58% 0.1 82)",
+          "oklch(68% 0.095 84)",
+          "oklch(80% 0.08 86)",
+          "oklch(93% 0.05 88)"
+        ],
+        "usage": "RESERVED for data accents only; the default data suffix color is teal"
+      },
+      "bg-light": {
+        "role": "neutral",
+        "displayName": "BG Light",
+        "canonical": "#F8F9FA",
+        "tonalRamp": [
+          "oklch(24% 0.008 246)",
+          "oklch(36% 0.007 246)",
+          "oklch(50% 0.006 246)",
+          "oklch(62% 0.006 246)",
+          "oklch(74% 0.005 246)",
+          "oklch(84% 0.004 246)",
+          "oklch(92% 0.003 246)",
+          "oklch(97.5% 0.003 246)"
+        ],
+        "usage": "Page ground, light section band, tinted cards, search input fill"
+      },
+      "surface-white": {
+        "role": "neutral",
+        "displayName": "Surface White",
+        "canonical": "#FFFFFF",
+        "usage": "White section bands, card surfaces"
+      },
+      "border-subtle": {
+        "role": "border",
+        "displayName": "Border Subtle",
+        "canonical": "rgba(11, 27, 43, 0.08)",
+        "usage": "Card borders, section bottom rules, dividers, metric strip separators"
+      },
+      "border-hover": {
+        "role": "border",
+        "displayName": "Border Hover",
+        "canonical": "rgba(13, 92, 82, 0.28)",
+        "usage": "Teal-tinted border that cards and tiles adopt on hover"
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Text Primary",
+        "canonical": "#0B1B2B"
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Text Muted",
+        "canonical": "#4A5568",
+        "usage": "Descriptions, excerpts, section subtitles"
+      },
+      "text-muted-light": {
+        "role": "neutral",
+        "displayName": "Text Muted Light",
+        "canonical": "#8A99AD",
+        "usage": "Meta rows, chip counts, placeholders"
+      },
+      "footer-accent": {
+        "role": "chrome",
+        "displayName": "Footer Accent",
+        "canonical": "#2DD4BF",
+        "usage": "App-chrome only (inline footer style); forbidden on page content"
+      },
+      "navbar-cream": {
+        "role": "chrome",
+        "displayName": "Navbar Cream",
+        "canonical": "#F4F4ED",
+        "usage": "App-chrome navbar ground (translucent rgba(244,244,237,0.78)); intentional drift from bg-light"
+      },
+      "navbar-teal": {
+        "role": "chrome",
+        "displayName": "Navbar Teal",
+        "canonical": "#116A5A",
+        "usage": "App-chrome accent; intentional drift from page teal"
+      },
+      "navbar-navy": {
+        "role": "chrome",
+        "displayName": "Navbar Navy",
+        "canonical": "#00152A",
+        "usage": "App-chrome ink; intentional drift from page navy"
+      },
+      "hero-dot": {
+        "role": "accent",
+        "displayName": "Hero Dot",
+        "canonical": "#34D399",
+        "usage": "7px live dot inside the dark-hero glass badge only"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero titles — inner pages clamp(34px,4.2vw,50px) 800/1.15/-0.03em; dark home hero clamp(2.4rem,4vw,3.4rem) 800/1.12. Topped by a badge pill, never masked lines." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings clamp(28px,3.4vw,38px) 800 inside the 680px section header, paired with a muted subtitle." },
+      "title": { "displayName": "Title", "purpose": "Card titles 19–20px 700; story titles clamp(28px,3.2vw,36px); box titles clamp(1.8rem,2.5vw,2.2rem) 800." },
+      "stat": { "displayName": "Stat", "purpose": "Metric figures — Epilogue 30px 800 tabular (1.45rem in dark hero strip); teal 0.62–0.7em 800 suffixes." },
+      "lead": { "displayName": "Lead", "purpose": "Hero lead 17px/1.7 max 580px; section leads 15.5–16px." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and excerpts 13.5–15.5px, 2-line clamp in dense cards." },
+      "label": { "displayName": "Label", "purpose": "Meta lines 11–12px muted-light; uppercase status/badge text 11px 700 0.06em." },
+      "chrome": { "displayName": "Chrome", "purpose": "Poppins 300–700 — shared navbar/footer chrome only, never page content." }
+    },
+    "shadows": [
+      { "name": "rest-whisper", "value": "0 4px 16px rgba(11, 27, 43, 0.04)", "purpose": "Catalog/mini cards and boxes at rest — soft navy-tinted comfort shadow." },
+      { "name": "hover-lift", "value": "0 20px 40px -10px rgba(11, 27, 43, 0.1) (cards) / 0 14px 32px -8px rgba(11, 27, 43, 0.08) (tiles/pillars) / 0 16px 32px -8px rgba(11, 27, 43, 0.08) (eco)", "purpose": "Hover bloom paired with the -4px lift and border-hover tint." },
+      { "name": "float-featured", "value": "0 24px 48px -12px rgba(0, 0, 0, 0.35) → hover 0 32px 64px -16px rgba(0, 0, 0, 0.42)", "purpose": "Featured report card floating over the dark hero; deepens to 0.42 on -4px hover." },
+      { "name": "frame-media", "value": "0 20px 48px -12px rgba(11, 27, 43, 0.12) (hero frame) / 0 12px 30px rgba(11, 27, 43, 0.08) (box media) / 0 16px 36px -10px rgba(11, 27, 43, 0.08) (story wrap)", "purpose": "Soft depth under rounded media frames and wraps." },
+      { "name": "glow-primary", "value": "0 12px 32px rgba(18, 168, 157, 0.3)", "purpose": "btn-primary hover, paired with brightness(1.15) — the one sanctioned teal glow." }
+    ],
+    "motion": [
+      { "name": "motion-ease-authored", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single easing (--ease-out) for every transition, reveal, and micro-move." },
+      { "name": "motion-reveal", "value": "opacity + translateY(16px), 0.5s; IntersectionObserver threshold 0.12, rootMargin 0px 0px -40px 0px", "purpose": "Site reveal idiom — inline styles injected by page scripts (beranda.js plain component selectors; kajian.js .kj-reveal; destinasi inline script .dst-reveal). Stagger d1–d5 at 60ms steps (60–300ms), delay strings cleared after ~900ms; unobserved after settle." },
+      { "name": "motion-count-up", "value": "1200ms easeOutQuad rAF; observer threshold 0.5, rootMargin -40px; fires once per element", "purpose": "[data-count-value] integers (beranda.js / kajian.js); [data-count] variant adds decimals, prefix/suffix, and id-ID digit grouping via toLocaleString (destinasi inline script). Reduced-motion renders final values instantly." },
+      { "name": "motion-progress-fill", "value": "width transition 1s ease-out, 200ms settle delay", "purpose": "[data-fill] bars in dst-metric / dst-mini fill once on intersection." },
+      { "name": "motion-hover-gap", "value": "gap 6px → 9/10px on teal links and card actions", "purpose": "The standard link affordance: spacing breathes instead of icons translating; plus image scale 1.02/1.035/1.08 inside fixed rounded frames." },
+      { "name": "motion-footer-entrance", "value": "opacity + translateY(24px → 0), 0.7s ease-out; threshold 0.05, rootMargin -48px", "purpose": "The one authored entrance: footer-modern resolves .is-hidden → .footer-visible once." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1024px (992px on beranda) — hero/box/story splits stack to 1fr, 3-col grids fall to 2 or 1, hero frames shorten to 360–380px" },
+      { "name": "mobile", "value": "640px — single column everywhere, sections drop to 56–64px, metric separators hidden, stat blocks 42% wrap, hero frames 280px, mini cards stack vertically" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (teal pill)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "999px teal pill; hover brightens with the teal glow shadow, arrow icon slides right. Page prefixes re-express it as .kj-btn--solid / .dst-btn--solid.",
+      "html": "<a href=\"#\" class=\"btn-primary\">Jelajahi Kajian <span class=\"btn-icon\">→</span></a>",
+      "css": ".btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; background: var(--teal); color: #FFFFFF; font-size: 14px; font-weight: 600; border-radius: 999px; text-decoration: none; transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), filter 0.2s var(--ease-out); } .btn-primary:hover { background: var(--teal); filter: brightness(1.15); box-shadow: 0 12px 32px rgba(18, 168, 157, 0.3); color: #FFFFFF; } .btn-icon { font-size: 16px; transition: transform 0.2s var(--ease-out); } .btn-primary:hover .btn-icon { transform: translateX(3px); } .btn-primary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button (light inner pages)",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "999px outline on border-subtle; hover turns teal (border + wash + text) with a -2px lift. .btn-outline-dark is the navy variant used as a corner 'view all' action.",
+      "html": "<a href=\"#\" class=\"btn-outline\">Tentang PKPN</a>",
+      "css": ".btn-outline { display: inline-flex; align-items: center; padding: 13px 22px; background: transparent; border: 1px solid var(--border-subtle); color: var(--navy); font-size: 14px; font-weight: 600; border-radius: 999px; text-decoration: none; transition: border-color 0.2s var(--ease-out), background-color 0.2s var(--ease-out), transform 0.2s var(--ease-out); } .btn-outline:hover { border-color: var(--teal); background-color: var(--teal-light); color: var(--teal); transform: translateY(-2px); } .btn-outline-dark { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1.5px solid var(--navy); border-radius: 9999px; color: var(--navy); font-size: 13.5px; font-weight: 600; text-decoration: none; transition: all 0.2s var(--ease-out); } .btn-outline-dark:hover { background: var(--navy); color: #FFFFFF; transform: translateY(-2px); }"
+    },
+    {
+      "name": "Hero Badge Pill (with dot)",
+      "kind": "chip",
+      "refersTo": "hero-badge",
+      "description": "Teal-wash pill with a live dot that opens every hero: 6px teal dot on light inner pages; 7px #34D399 dot in the glass variant on the dark home hero.",
+      "html": "<span class=\"about-badge\"><span class=\"badge-dot\"></span>Pusat Data & Publikasi Kajian</span>",
+      "css": ".about-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--teal-light); border: 1px solid rgba(13, 92, 82, 0.18); border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--teal); letter-spacing: 0.02em; margin-bottom: 20px; } .badge-dot { width: 6px; height: 6px; border-radius: 50%; background-color: var(--teal); }"
+    },
+    {
+      "name": "Catalog Card (dest-showcase / kj-card)",
+      "kind": "card",
+      "refersTo": "catalog-card",
+      "description": "White radius-md media card with glass tag pill, teal title hover, clamped excerpt, and bordered footer row; hover lifts -4px, tints the border teal, and blooms the soft shadow.",
+      "html": "<article class=\"dest-showcase-card\"><div class=\"dest-media\"><span class=\"dest-pill\">Studi Kasus</span></div><div class=\"dest-info\"><h3 class=\"dest-name\">Daya Saing Destinasi Panagan</h3><p class=\"dest-summary\">Kajian multi-tahun membaca pola kunjungan dan distribusi pendapatan lokal.</p><a href=\"#\" class=\"dest-link\">Baca Ringkasan <span>→</span></a></div></article>",
+      "css": ".dest-showcase-card { background: #FFFFFF; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 16px rgba(11, 27, 43, 0.04); transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s ease; } .dest-showcase-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(11, 27, 43, 0.1); border-color: var(--border-hover); } .dest-media { position: relative; height: 220px; overflow: hidden; background: #E2E8F0; } .dest-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); } .dest-showcase-card:hover .dest-media img { transform: scale(1.035); } .dest-pill { position: absolute; top: 14px; left: 14px; background: rgba(11, 27, 43, 0.85); backdrop-filter: blur(8px); color: #FFFFFF; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 9999px; } .dest-info { padding: 24px; } .dest-name { font-size: 1.25rem; font-weight: 700; margin: 0 0 8px 0; } .dest-summary { font-size: 13.5px; line-height: 1.6; color: var(--text-muted); margin: 0 0 18px 0; } .dest-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); font-size: 13px; font-weight: 600; transition: gap 0.2s ease; } .dest-showcase-card:hover .dest-link { gap: 9px; }"
+    },
+    {
+      "name": "Ecosystem Card (icon tile + badge)",
+      "kind": "card",
+      "refersTo": "ecosystem-card",
+      "description": "Tinted radius-md card headed by a 44px/12px teal icon tile and a white badge pill; hover fills white, lifts -4px, tints the border, and the teal action link's gap animates 6→10px.",
+      "html": "<a href=\"#\" class=\"ecosystem-card\"><div class=\"card-top\"><div class=\"card-icon\">📊</div><span class=\"card-badge\">8 kajian</span></div><h3 class=\"card-title\">Data & Statistik</h3><p class=\"card-desc\">Indikator dst. dari statistik resmi dan survei berlapis.</p><span class=\"card-action\">Jelajahi Dataset <span>→</span></span></a>",
+      "css": ".ecosystem-card { background: var(--bg-light); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px 24px; display: flex; flex-direction: column; transition: transform 0.3s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; } .ecosystem-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 16px 32px -8px rgba(11, 27, 43, 0.08); background: #FFFFFF; } .card-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--teal-light); color: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 22px; } .card-badge { font-size: 11px; font-weight: 600; color: var(--text-muted); background: #FFFFFF; border: 1px solid var(--border-subtle); padding: 3px 10px; border-radius: 9999px; } .card-action { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--teal); transition: gap 0.2s ease; } .ecosystem-card:hover .card-action { gap: 10px; }"
+    },
+    {
+      "name": "Toolbar: Search Pill + Category Chips",
+      "kind": "chip",
+      "refersTo": "category-chip",
+      "description": "White radius-lg toolbar holding a 999px search input (teal focus ring) and pill chips with sup counts; active chip fills solid teal.",
+      "html": "<div class=\"kj-toolbar\"><div class=\"kj-search\"><iconify-icon class=\"kj-search-icon\" icon=\"mdi:magnify\"></iconify-icon><input type=\"text\" placeholder=\"Cari kajian…\"></div><div class=\"kj-chips\"><button class=\"kj-chip is-active\" aria-pressed=\"true\">Semua <sup>6</sup></button><button class=\"kj-chip\" aria-pressed=\"false\">Destinasi <sup>2</sup></button></div></div>",
+      "css": ".kj-toolbar { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; background: var(--surface-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 18px 20px; } .kj-search input { width: 100%; font-size: 14px; color: var(--navy); background: var(--bg-light); border: 1px solid var(--border-subtle); border-radius: 999px; padding: 12px 20px 12px 46px; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .kj-search input:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-light); } .kj-chip { display: inline-flex; align-items: baseline; gap: 3px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); background: var(--surface-white); border: 1px solid var(--border-subtle); border-radius: 999px; padding: 9px 16px; cursor: pointer; transition: border-color 0.2s, background-color 0.2s, color 0.2s, transform 0.2s; } .kj-chip:hover { border-color: var(--border-hover); color: var(--teal); transform: translateY(-1px); } .kj-chip.is-active { background: var(--teal); border-color: var(--teal); color: var(--surface-white); } .kj-chip sup { font-size: 10.5px; font-weight: 700; color: var(--text-muted-light); } .kj-chip.is-active sup { color: rgba(255, 255, 255, 0.75); }"
+    },
+    {
+      "name": "Metric Block (data suffix + tabular)",
+      "kind": "custom",
+      "refersTo": "stat",
+      "description": "Epilogue 30px/800 tabular figure with a teal 0.7em 800 suffix; strip variant separates blocks with 1px×40px rules, carded variant pairs with a 42px icon tile and 6px progress bar.",
+      "html": "<div class=\"kj-statblock\"><strong><span data-count-value=\"42\">42</span><span class=\"kj-suf\">+</span></strong><span>Publikasi terindeks</span></div>",
+      "css": ".kj-statblock { flex: 1; min-width: 180px; display: flex; flex-direction: column; gap: 4px; } .kj-statblock strong { font-family: 'Epilogue', system-ui, sans-serif; font-size: 30px; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; } .kj-suf { font-size: 0.7em; font-weight: 800; color: var(--teal); margin-left: 2px; } .kj-statblock span:last-child { font-size: 13px; color: var(--text-muted); font-weight: 500; }"
+    },
+    {
+      "name": "Data Progress Meter",
+      "kind": "custom",
+      "refersTo": "data-progress",
+      "description": "6px/999px track with a teal fill that animates to data-fill on intersection; partnered with a fixed-width tabular label.",
+      "html": "<div class=\"dst-progress-row\"><div class=\"dst-progress\"><i data-fill=\"72\"></i></div><span class=\"dst-progress-label\">72%</span></div>",
+      "css": ".dst-progress { height: 6px; border-radius: 999px; background: var(--border-subtle); overflow: hidden; } .dst-progress i { display: block; height: 100%; width: 0; background: var(--teal); border-radius: 999px; transition: width 1s var(--ease-out); } .dst-progress-label { font-family: 'Epilogue', sans-serif; font-size: 13px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; min-width: 42px; text-align: right; }"
+    },
+    {
+      "name": "Institutional Box (vision / kj-box / dst-box)",
+      "kind": "card",
+      "refersTo": "institutional-box",
+      "description": "White radius-lg 48px box with a 0.9/1.1 split: radius-md media opposite a status badge, 800 clamp title, muted text, teal-icon spec rows, and pill actions.",
+      "html": "<section class=\"kj-box kj-reveal\"><div class=\"kj-box-grid\"><div class=\"kj-box-media\"></div><div><span class=\"kj-status\">Rilis Utama</span><h2 class=\"kj-box-title\">…</h2><p class=\"kj-box-text\">…</p><div class=\"kj-spec\"><div class=\"kj-spec-row\"><iconify-icon class=\"kj-spec-icon\" icon=\"mdi:check-circle\"></iconify-icon><span>…</span></div></div></div></div></section>",
+      "css": ".kj-box { background: var(--surface-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 48px; box-shadow: 0 8px 24px rgba(11, 27, 43, 0.04); } .kj-box-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; } .kj-status { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--teal); background: var(--teal-light); border: 1px solid rgba(13, 92, 82, 0.18); text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; width: fit-content; } .kj-spec-icon { color: var(--teal); font-size: 18px; margin-top: 2px; flex-shrink: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Research Institute",
+    "overview": "PKPN's surfaces read as one warm, modern institutional platform: a light paper ground (#F8F9FA) carrying deep navy ink, organized into soft-radius cards (8/14/20px), badge pills, and teal icon tiles. Pages share a single canonical :root token block (declared verbatim in every page stylesheet) and one component vocabulary: pill buttons, featured media cards, ecosystem grids, metric strips, institutional boxes, and category chips. Navy speaks in every headline, teal is the single interactive accent (buttons, links, badges, tiles, progress fills), and gold (#B48424) is reserved for data accents. Two hero patterns coexist: a dark gradient hero for the home page and a light gradient hero with badge pill and media frame on every inner page. Card hover is a full signature move — lift, teal-tinted border, soft shadow bloom — and every page reveals, counts, and fills with the same authored interaction numbers.",
+    "keyCharacteristics": [
+      "Light paper ground with alternating light/white surface bands, each closed by a 1px border-subtle bottom rule; sections hold an 88px rhythm.",
+      "Soft geometry: radius 8/14/20 scale, 6px badge rounds, 10–12px icon tiles, 999px pills on every button, chip, badge, input, and progress bar.",
+      "Two authored hero patterns — dark gradient (home) and light gradient + badge pill + media frame (inner pages).",
+      "Card hover signature: -4px lift (-8px collection cards), border-hover teal tint, soft navy shadow bloom.",
+      "Data speaks in Epilogue 800 tabular figures with teal 0.62–0.7em suffixes, 1200ms easeOutQuad count-up, and 6px progress meters.",
+      "One interaction idiom site-wide: reveal 16px/0.5s ease-out @ threshold 0.12 / rootMargin -40px, d1–d5 stagger at 60ms steps; CSS and JS both collapse under prefers-reduced-motion.",
+      "App chrome (cream navbar #F4F4ED / teal #116A5A / navy #00152A; navy footer with #2DD4BF accent + authored 0.7s entrance) is a documented, intentional cousin — not synced to page tokens."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Teal is the only interactive accent. Buttons, badges, chips, icon tiles, progress bars, focus rings, and hover titles all share it; there is no second action color on pages.", "section": "colors" },
+      { "name": "The Data-Accent Gold Rule", "body": "--gold #B48424 is declared but reserved for data emphasis. The default data suffix color is teal; decorative gold anywhere else is a violation.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Epilogue speaks (headings, numerals, titles); Be Vietnam Pro reads (paragraphs, buttons); Poppins lives only in the shared navbar/footer chrome. Never swap roles.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "Every figure that can change while read sets tabular numerals (scoped via [data-count-value] / [data-count] tokens). Digits never wiggle during count-up.", "section": "typography" },
+      { "name": "The Comfort-Shadow Rule", "body": "Cards rest on whisper shadows and bloom on hover — soft, navy-tinted, always growing. The featured report card is the one deep-shadow exception (it floats over the dark hero).", "section": "elevation" },
+      { "name": "The Pill-and-Rule Balance", "body": "Rounds carry friendliness; the 1px border-subtle section rules carry structure. Never trade the 88px band rhythm or section bottom border for roundness.", "section": "shapes" },
+      { "name": "The Verbatim Token Rule", "body": "Every page stylesheet re-declares the same :root token block verbatim under a page prefix (home-* / about-* / kj-* / dst-*). Prefixes are collision-safe scoping, not separate systems; keep the blocks in sync when touching one.", "section": "layout" }
+    ],
+    "dos": [
+      "Do copy the canonical :root token block verbatim into any new page stylesheet, using the home-* / about-* / kj-* / dst-* prefix convention.",
+      "Do build heroes from the two patterns: dark gradient for home; light gradient + teal badge pill + dot + media frame for inner pages.",
+      "Do give every card the full hover signature: lift (-4px, -8px collection), border-hover teal tint, and the soft navy shadow bloom.",
+      "Do keep sections at 88px rhythm with alternating light/white bands closed by a 1px border-subtle rule, headers capped at 680px.",
+      "Do express data in the metric system: Epilogue 800 tabular figures, teal suffixes, 6px/999px progress bars, single-fire count-up with id-ID formatting where decimals exist.",
+      "Do implement reveals with the site idiom exactly: 16px / 0.5s cubic-bezier(0.16,1,0.3,1), threshold 0.12, rootMargin -40px, d1–d5 at 60ms steps.",
+      "Do honor prefers-reduced-motion in both CSS (transitions stripped, reveals resolved) and JS (counters render final values instantly) on every page.",
+      "Do use iconify-icon as the only icon system and pill buttons for all actions."
+    ],
+    "donts": [
+      "Don't reintroduce the retired field-journal language: square corners, hairline-only frames, typography-only statuses, underline-tab filters, gold top rules, navy panels with inset hairline frames.",
+      "Don't touch the navbar/footer color drift (#F4F4ED / #116A5A / #00152A / #2DD4BF) — it is documented, intentional app-chrome identity.",
+      "Don't use gold decoratively; it is reserved for data accents, and the default data suffix color is teal.",
+      "Don't invent new accents — #34D399 lives only in the dark-hero badge dot, and the teal glow tint appears only inside the sanctioned button shadow.",
+      "Don't swap font roles: Epilogue headlines/numerals, Be Vietnam Pro body/buttons, Poppins only in shared chrome.",
+      "Don't re-fire count-ups, reveals, or progress fills on scroll-back; each element animates exactly once (observe → unobserve).",
+      "Don't let section padding drift below 88px on desktop, and don't nest cards more than one level (minis inside a box is the sanctioned exception)."
+    ]
+  }
+}

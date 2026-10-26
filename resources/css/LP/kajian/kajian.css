@@ -1,0 +1,879 @@
+/* =========================================================
+   KAJIAN — Pusat Data & Publikasi
+   Mengikuti sistem desain situs (beranda.css / tentang.css):
+   pill & radius 8/14/20, badge, ikon-tile, shadow lembut,
+   light hero gradient, section 88px, count-up tabular.
+   Semua class di-prefix "kj-".
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+:root {
+    --navy-deep: #07131F;
+    --navy: #0B1B2B;
+    --navy-surface: #122436;
+    --teal: #0D5C52;
+    --teal-dark: #073D36;
+    --teal-light: rgba(13, 92, 82, 0.08);
+    --gold: #B48424;
+    --bg-light: #F8F9FA;
+    --surface-white: #FFFFFF;
+    --border-subtle: rgba(11, 27, 43, 0.08);
+    --border-hover: rgba(13, 92, 82, 0.28);
+    --text-primary: #0B1B2B;
+    --text-muted: #4A5568;
+    --text-muted-light: #8A99AD;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Epilogue', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+    color: var(--navy);
+}
+
+::selection {
+    background: var(--teal-light);
+    color: var(--navy-deep);
+}
+
+:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+[data-count-value] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+}
+
+.kj-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- Reveal on scroll (angka sama dengan situs) ---------- */
+.kj-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.kj-reveal.in {
+    opacity: 1;
+    transform: none;
+}
+
+.kj-reveal.d1 { transition-delay: 0.06s; }
+.kj-reveal.d2 { transition-delay: 0.12s; }
+.kj-reveal.d3 { transition-delay: 0.18s; }
+.kj-reveal.d4 { transition-delay: 0.24s; }
+.kj-reveal.d5 { transition-delay: 0.3s; }
+
+/* =========================================
+   HERO (light inner-page, pattern tentang)
+========================================= */
+.kj-hero {
+    position: relative;
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.kj-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.kj-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--teal-light);
+    border: 1px solid rgba(13, 92, 82, 0.18);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+
+.kj-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--teal);
+    flex-shrink: 0;
+}
+
+.kj-title {
+    font-size: clamp(34px, 4.2vw, 50px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    margin: 0 0 20px;
+}
+
+.kj-lead {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0 0 32px;
+    max-width: 580px;
+}
+
+.kj-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Tombol (pill, pola situs) ---------- */
+.kj-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out),
+                border-color 0.2s var(--ease-out), color 0.2s var(--ease-out),
+                box-shadow 0.2s var(--ease-out), filter 0.2s var(--ease-out);
+}
+
+.kj-btn--solid {
+    background: var(--teal);
+    color: #FFFFFF;
+}
+
+.kj-btn--solid:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 12px 32px rgba(18, 168, 157, 0.3);
+    transform: translateY(-2px);
+    color: #FFFFFF;
+}
+
+.kj-btn--outline {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--navy);
+}
+
+.kj-btn--outline:hover {
+    border-color: var(--teal);
+    background-color: var(--teal-light);
+    color: var(--teal);
+    transform: translateY(-2px);
+}
+
+.kj-btn-icon {
+    font-size: 16px;
+    transition: transform 0.2s var(--ease-out);
+}
+
+.kj-btn--solid:hover .kj-btn-icon {
+    transform: translateX(3px);
+}
+
+/* ---------- Kartu laporan unggulan (pola beranda) ---------- */
+.kj-featured-card {
+    display: block;
+    color: var(--navy);
+    text-decoration: none;
+    background: var(--surface-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.kj-featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.42);
+}
+
+.kj-card-media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: #E2E8F0;
+}
+
+.kj-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.kj-featured-card:hover .kj-card-media img {
+    transform: scale(1.035);
+}
+
+.kj-card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(11, 27, 43, 0.88);
+    backdrop-filter: blur(8px);
+    color: var(--surface-white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 9999px;
+}
+
+.kj-card-body {
+    padding: 24px;
+}.kj-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 10px;
+    color: var(--navy);
+}
+
+.kj-card-excerpt {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+}
+
+.kj-card-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-muted-light);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 16px;
+}
+
+.kj-card-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.kj-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--teal);
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.kj-card-link:hover {
+    color: var(--teal-dark);
+    gap: 9px;
+}
+
+/* =========================================
+   STRIP STATISTIK (pola metrics-strip)
+========================================= */
+.kj-statstrip {
+    background: var(--surface-white);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 32px 0;
+}
+
+.kj-statgrid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.kj-statblock {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.kj-statblock strong {
+    font-family: 'Epilogue', system-ui, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.kj-statblock span {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.kj-statsep {
+    width: 1px;
+    height: 40px;
+    background: var(--border-subtle);
+}
+
+.kj-suf {
+    font-size: 0.7em;
+    font-weight: 800;
+    color: var(--teal);
+    margin-left: 2px;
+}
+
+/* =========================================
+   SECTION DASAR
+========================================= */
+.kj-section {
+    padding: 88px 0;
+}
+
+.kj-section--light {
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.kj-section--white {
+    background: var(--surface-white);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.kj-header {
+    max-width: 680px;
+    margin-bottom: 48px;
+}
+
+.kj-heading {
+    font-size: clamp(28px, 3.4vw, 38px);
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.kj-sub {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* =========================================
+   KAJIAN UTAMA (pola institutional-box)
+========================================= */
+.kj-box {
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    box-shadow: 0 8px 24px rgba(11, 27, 43, 0.04);
+}
+
+.kj-box-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.kj-box-media img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 30px rgba(11, 27, 43, 0.08);
+    transition: transform 0.4s var(--ease-out);
+}
+
+.kj-box-media:hover img {
+    transform: scale(1.02);
+}
+
+.kj-status {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    background: var(--teal-light);
+    border: 1px solid rgba(13, 92, 82, 0.18);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    width: fit-content;
+}
+
+.kj-box-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.kj-box-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0 0 24px;
+}
+
+.kj-spec {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.kj-spec-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+.kj-spec-row strong {
+    font-weight: 600;
+}
+
+.kj-spec-row span {
+    color: var(--text-muted);
+}
+
+.kj-spec-icon {
+    color: var(--teal);
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   KATALOG — toolbar pencarian + kartu
+========================================= */
+.kj-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    margin-bottom: 40px;
+}
+
+.kj-search {
+    position: relative;
+    flex: 1 1 300px;
+}
+
+.kj-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+    color: var(--teal);
+    pointer-events: none;
+}
+
+.kj-search input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--bg-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    padding: 12px 20px 12px 46px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kj-search input::placeholder {
+    color: var(--text-muted-light);
+}
+
+.kj-search input:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px var(--teal-light);
+}
+
+.kj-chips {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.kj-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 3px;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.kj-chip:hover {
+    border-color: var(--border-hover);
+    color: var(--teal);
+    transform: translateY(-1px);
+}
+
+.kj-chip.is-active {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: var(--surface-white);
+}
+
+.kj-chip sup {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--text-muted-light);
+}
+
+.kj-chip.is-active sup {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Kartu katalog (pola dest-showcase-card) ---------- */
+.kj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+.kj-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(11, 27, 43, 0.04);
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s ease;
+}
+
+.kj-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(11, 27, 43, 0.1);
+    border-color: var(--border-hover);
+}
+
+.kj-card.is-filtered-out {
+    display: none;
+}
+
+.kj-card:hover .kj-card-media img {
+    transform: scale(1.035);
+}
+
+.kj-card-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.kj-card-meta-line {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-muted-light);
+    margin: 0 0 8px;
+}
+
+.kj-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.kj-card-title a {
+    color: var(--navy);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.kj-card-title a:hover {
+    color: var(--teal);
+}
+
+.kj-card-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kj-card-foot {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.kj-card-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted-light);
+}
+
+.kj-card-stat iconify-icon {
+    color: var(--teal);
+    font-size: 15px;
+}
+
+.kj-entry-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--teal);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.kj-entry-link:hover {
+    gap: 9px;
+    color: var(--teal-dark);
+}
+
+/* ---------- Empty state ---------- */
+.kj-empty {
+    text-align: center;
+    padding: 56px 24px;
+    background: var(--surface-white);
+    border: 1px dashed var(--border-hover);
+    border-radius: var(--radius-md);
+}
+
+.kj-empty-text {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+}
+
+/* =========================================
+   METODOLOGI (pola pillar-card)
+========================================= */
+.kj-method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kj-method-item {
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+
+.kj-method-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 14px 32px -8px rgba(11, 27, 43, 0.08);
+}
+
+.kj-method-num {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--teal);
+    letter-spacing: 0.04em;
+}
+
+.kj-method-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.kj-method-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* =========================================
+   CTA (pola institutional-box)
+========================================= */
+.kj-cta-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.kj-cta-text h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    margin: 0 0 14px;
+    line-height: 1.2;
+}
+
+.kj-cta-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.kj-cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+    .kj-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .kj-box-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .kj-box-media img {
+        height: 300px;
+    }
+
+    .kj-method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kj-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .kj-cta-actions {
+        justify-content: flex-start;
+    }
+
+    .kj-statgrid {
+        gap: 18px;
+    }
+
+    .kj-statblock {
+        flex: 1 1 42%;
+    }
+
+    .kj-statsep {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .kj-hero {
+        padding: 48px 0 40px;
+    }
+
+    .kj-section {
+        padding: 64px 0;
+    }
+
+    .kj-box {
+        padding: 28px 24px;
+    }
+
+    .kj-toolbar {
+        padding: 14px;
+    }
+
+    .kj-card-media {
+        height: 180px;
+    }
+}
+
+/* ---------- hormati preferensi pengguna ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .kj-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .kj-btn,
+    .kj-card,
+    .kj-card-media img,
+    .kj-card-link,
+    .kj-entry-link,
+    .kj-method-item,
+    .kj-box-media img,
+    .kj-chip,
+    .kj-featured-card {
+        transition: none !important;
+    }
+}

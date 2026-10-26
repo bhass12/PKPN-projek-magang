@@ -1,0 +1,1007 @@
+/* =========================================================
+   DESTINASI — Kajian Destinasi Nusantara
+   Mengikuti sistem desain situs (beranda.css / tentang.css):
+   pill & radius 8/14/20, badge, ikon-tile, shadow lembut,
+   light hero gradient, section 88px, count-up tabular.
+   Semua class di-prefix "dst-".
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+:root {
+    --navy-deep: #07131F;
+    --navy: #0B1B2B;
+    --navy-surface: #122436;
+    --teal: #0D5C52;
+    --teal-dark: #073D36;
+    --teal-light: rgba(13, 92, 82, 0.08);
+    --gold: #B48424;
+    --bg-light: #F8F9FA;
+    --surface-white: #FFFFFF;
+    --border-subtle: rgba(11, 27, 43, 0.08);
+    --border-hover: rgba(13, 92, 82, 0.28);
+    --text-primary: #0B1B2B;
+    --text-muted: #4A5568;
+    --text-muted-light: #8A99AD;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Epilogue', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+    color: var(--navy);
+}
+
+::selection {
+    background: var(--teal-light);
+    color: var(--navy-deep);
+}
+
+:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+[data-count] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+}
+
+.dst-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- Reveal on scroll (angka sama dengan situs) ---------- */
+.dst-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.dst-reveal.in {
+    opacity: 1;
+    transform: none;
+}
+
+.dst-reveal.d1 { transition-delay: 0.06s; }
+.dst-reveal.d2 { transition-delay: 0.12s; }
+.dst-reveal.d3 { transition-delay: 0.18s; }
+.dst-reveal.d4 { transition-delay: 0.24s; }
+.dst-reveal.d5 { transition-delay: 0.3s; }
+
+/* =========================================
+   HERO (light inner-page, pattern tentang)
+========================================= */
+.dst-hero {
+    position: relative;
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.dst-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.dst-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--teal-light);
+    border: 1px solid rgba(13, 92, 82, 0.18);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+
+.dst-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--teal);
+    flex-shrink: 0;
+}
+
+.dst-title {
+    font-size: clamp(34px, 4.2vw, 50px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    margin: 0 0 20px;
+}
+
+.dst-lead {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0 0 32px;
+    max-width: 580px;
+}
+
+.dst-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Bingkai media hero (pola hero-image-frame) ---------- */
+.dst-hero-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--navy);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 20px 48px -12px rgba(11, 27, 43, 0.12);
+}
+
+.dst-hero-frame img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.dst-hero-frame:hover img {
+    transform: scale(1.02);
+}
+
+.dst-frame-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(7, 19, 31, 0.88) 100%);
+    color: var(--surface-white);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dst-frame-caption strong {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.dst-frame-caption span {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Tombol (pill, pola situs) ---------- */
+.dst-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out),
+                border-color 0.2s var(--ease-out), color 0.2s var(--ease-out),
+                box-shadow 0.2s var(--ease-out), filter 0.2s var(--ease-out);
+}
+
+.dst-btn--solid {
+    background: var(--teal);
+    color: var(--surface-white);
+}
+
+.dst-btn--solid:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 12px 32px rgba(18, 168, 157, 0.3);
+    transform: translateY(-2px);
+    color: var(--surface-white);
+}
+
+.dst-btn--outline {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--navy);
+}
+
+.dst-btn--outline:hover {
+    border-color: var(--teal);
+    background-color: var(--teal-light);
+    color: var(--teal);
+    transform: translateY(-2px);
+}
+
+.dst-btn-icon {
+    font-size: 16px;
+    transition: transform 0.2s var(--ease-out);
+}
+
+.dst-btn--solid:hover .dst-btn-icon {
+    transform: translateX(3px);
+}
+
+/* ---------- Progress data (pill) ---------- */
+.dst-progress {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--border-subtle);
+    overflow: hidden;
+}
+
+.dst-progress i {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--teal);
+    border-radius: 999px;
+    transition: width 1s var(--ease-out);
+}
+
+.dst-progress-label {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    min-width: 42px;
+    text-align: right;
+}
+
+/* ---------- Badge status (pola pub-card-badge) ---------- */
+.dst-status {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    background: var(--teal-light);
+    border: 1px solid rgba(13, 92, 82, 0.18);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    width: fit-content;
+}
+
+.dst-status-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.dst-box-title--sm {
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+}
+
+/* =========================================
+   SECTION DASAR
+========================================= */
+.dst-section {
+    padding: 88px 0;
+}
+
+.dst-section--light {
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.dst-section--white {
+    background: var(--surface-white);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.dst-header {
+    max-width: 680px;
+    margin-bottom: 48px;
+}
+
+.dst-heading {
+    font-size: clamp(28px, 3.4vw, 38px);
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.dst-sub {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* =========================================
+   PROYEK — institutional-box + kartu pendamping
+========================================= */
+.dst-box {
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    box-shadow: 0 8px 24px rgba(11, 27, 43, 0.04);
+}
+
+.dst-box-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.dst-box-media img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 30px rgba(11, 27, 43, 0.08);
+    transition: transform 0.4s var(--ease-out);
+}
+
+.dst-box-media:hover img {
+    transform: scale(1.02);
+}
+
+.dst-box-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.dst-box-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0 0 24px;
+}
+
+.dst-spec {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.dst-spec-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+.dst-spec-row strong {
+    font-weight: 600;
+}
+
+.dst-spec-row span {
+    color: var(--text-muted);
+}
+
+.dst-spec-icon {
+    color: var(--teal);
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.dst-progress-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 28px;
+}
+
+.dst-progress-row .dst-progress {
+    flex: 1;
+}
+
+/* ---------- Proyek pendamping (pola ecosystem-card) ---------- */
+.dst-minis {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.dst-mini {
+    background: var(--bg-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.dst-mini:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 16px 32px -8px rgba(11, 27, 43, 0.08);
+    background: var(--surface-white);
+}
+
+.dst-mini-thumb {
+    width: 104px;
+    height: 78px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--navy);
+}
+
+.dst-mini-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s var(--ease-out);
+}
+
+.dst-mini:hover .dst-mini-thumb img {
+    transform: scale(1.05);
+}
+
+.dst-mini-body {
+    min-width: 0;
+    flex: 1;
+}
+
+.dst-mini-meta {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-muted-light);
+    margin: 0 0 6px;
+}
+
+.dst-mini-title {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 6px;
+    line-height: 1.35;
+    transition: color 0.2s ease;
+}
+
+.dst-mini:hover .dst-mini-title {
+    color: var(--teal);
+}
+
+.dst-mini-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.dst-mini-foot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dst-mini-foot .dst-progress {
+    flex: 1;
+}
+
+/* =========================================
+   FOKUS ANALISIS (pola value-item + counter)
+========================================= */
+.dst-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.dst-metric {
+    background: var(--bg-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.dst-metric:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+}
+
+.dst-metric-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--teal-light);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.dst-metric-num {
+    font-family: 'Epilogue', system-ui, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.dst-metric-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0;
+}
+
+.dst-metric-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.dst-metric .dst-progress {
+    margin-top: 2px;
+}
+
+/* =========================================
+   STORY SECTIONS (pola story-layout)
+========================================= */
+.dst-story {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.dst-story-rev .dst-story-media {
+    order: 2;
+}
+
+.dst-story-media {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 16px 36px -10px rgba(11, 27, 43, 0.08);
+    margin: 0;
+}
+
+.dst-story-actions {
+    margin-top: 8px;
+}
+
+.dst-story figure,
+.dst-hero figure {
+    margin: 0;
+}
+
+.dst-story-media img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.dst-story-media:hover img {
+    transform: scale(1.02);
+}
+
+.dst-story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dst-story-title {
+    font-size: clamp(28px, 3.2vw, 36px);
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 4px;
+    line-height: 1.2;
+}
+
+.dst-story-lead {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.dst-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 4px 0 0;
+}
+
+.dst-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+.dst-list iconify-icon {
+    color: var(--teal);
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.dst-list strong {
+    font-weight: 600;
+}
+
+.dst-list span {
+    color: var(--text-muted);
+}
+
+/* =========================================
+   INDIKATOR (pola pillar-card)
+========================================= */
+.dst-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.dst-pillar {
+    background: var(--bg-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+
+.dst-pillar:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 14px 32px -8px rgba(11, 27, 43, 0.08);
+}
+
+.dst-pillar-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--teal-light);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.dst-pillar-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.dst-pillar-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* =========================================
+   KOLEKSI (pola pub-cta-card)
+========================================= */
+.dst-collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.dst-collection-card {
+    position: relative;
+    overflow: hidden;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.dst-collection-card:hover {
+    transform: translateY(-8px);
+}
+
+.dst-collection-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.dst-collection-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.dst-collection-media {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.dst-collection-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.dst-collection-card:hover .dst-collection-media img {
+    transform: scale(1.08);
+}
+
+.dst-collection-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.32) 100%);
+    transition: background 0.3s ease;
+}
+
+.dst-collection-card:hover .dst-collection-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.dst-collection-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px;
+    background: var(--surface-white);
+    border: 1px solid var(--border-subtle);
+    border-top: none;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.dst-collection-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    background: var(--teal-light);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    width: fit-content;
+}
+
+.dst-collection-meta {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted-light);
+    margin: 0 0 10px;
+}
+
+.dst-collection-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--navy);
+    margin: 0 0 10px;
+}
+
+.dst-collection-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+    flex-grow: 1;
+}
+
+.dst-collection-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    transition: gap 0.2s ease;
+}
+
+.dst-collection-card:hover .dst-collection-link {
+    gap: 10px;
+}
+
+/* =========================================
+   CTA (pola institutional-box)
+========================================= */
+.dst-cta-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.dst-cta-text h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    margin: 0 0 14px;
+    line-height: 1.2;
+}
+
+.dst-cta-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.dst-cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+    .dst-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .dst-hero-frame img {
+        height: 360px;
+    }
+
+    .dst-box-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .dst-box-media img {
+        height: 280px;
+    }
+
+    .dst-minis {
+        grid-template-columns: 1fr;
+    }
+
+    .dst-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dst-story {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .dst-story-rev .dst-story-media {
+        order: 0;
+    }
+
+    .dst-pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .dst-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .dst-cta-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .dst-hero {
+        padding: 48px 0 40px;
+    }
+
+    .dst-section {
+        padding: 64px 0;
+    }
+
+    .dst-hero-frame img {
+        height: 280px;
+    }
+
+    .dst-box {
+        padding: 28px 24px;
+    }
+
+    .dst-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .dst-mini {
+        flex-direction: column;
+    }
+
+    .dst-mini-thumb {
+        width: 100%;
+        height: 140px;
+    }
+
+    .dst-mini-foot {
+        flex-wrap: wrap;
+    }
+
+    .dst-mini-foot .dst-progress {
+        flex: 1 0 100%;
+    }
+
+    .dst-mini-foot .dst-progress-label {
+        text-align: left;
+    }
+}
+
+/* ---------- hormati preferensi pengguna ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .dst-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .dst-btn,
+    .dst-mini,
+    .dst-mini-thumb img,
+    .dst-metric,
+    .dst-pillar,
+    .dst-collection-card,
+    .dst-collection-media img,
+    .dst-hero-frame img,
+    .dst-box-media img,
+    .dst-story-media img,
+    .dst-progress i {
+        transition: none !important;
+    }
+}

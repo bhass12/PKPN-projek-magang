@@ -1,0 +1,535 @@
+.publication-header {
+    padding: 200px 6% 100px;
+    background: #f7f9f8;
+}
+
+.publication-header-inner {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: #718096;
+}
+
+.breadcrumb span {
+    color: #0f766e;
+}
+
+.publication-header h1 {
+    margin: 25px 0 10px;
+    font-family: Georgia, serif;
+    font-size: 48px;
+    color: #0d2940;
+}
+
+.publication-header p {
+    max-width: 700px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+
+
+/* =========================================================
+   PUBLICATION SECTION
+========================================================= */
+
+.publication-section {
+    min-height: 100vh;
+    padding-bottom: 700px;
+    padding: 120px 30px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.publication-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+
+/* Membalik posisi gambar dan teks */
+
+.publication-main.reverse {
+    direction: rtl;
+}
+.publication-main.reverse .publication-content {
+    direction: ltr;
+}
+
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.publication-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(13, 41, 64, 0.12);
+}
+
+.publication-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.publication-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* NOMOR PUBLIKASI */
+
+.publication-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(13, 41, 64, 0.9);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.publication-content {
+    padding: 10px;
+}
+
+.publication-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #0f766e;
+}
+
+.publication-content h2 {
+    margin: 0 0 20px;
+
+    font-family: Georgia, serif;
+
+    font-size: 36px;
+    line-height: 1.25;
+
+    color: #0d2940;
+}
+
+.publication-content p {
+    margin-bottom: 15px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #64748b;
+}
+
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.publication-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    padding: 17px 0;
+
+    margin-bottom: 20px;
+
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.publication-meta span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    color: #475569;
+}
+
+.publication-meta iconify-icon {
+    font-size: 18px;
+
+    color: #0f766e;
+}
+
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+.info-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #f5f8f7;
+
+    border: 1px solid rgba(13, 41, 64, 0.08);
+
+    transition: 0.25s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(15, 118, 110, 0.3);
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dff4ef;
+
+    color: #0f766e;
+}
+
+.info-icon iconify-icon {
+    font-size: 21px;
+}
+
+.info-card div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.info-card span {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    color: #64748b;
+}
+
+.info-card strong {
+    font-size: 14px;
+
+    color: #0d2940;
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+    margin-top: 45px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.description h3 {
+    margin: 0 0 15px;
+
+    font-family: Georgia, serif;
+
+    font-size: 26px;
+
+    color: #0d2940;
+}
+
+.description p {
+    max-width: 950px;
+
+    margin-bottom: 12px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #64748b;
+}
+
+
+
+/* =========================================================
+   PEMISAH ANTAR PUBLIKASI
+========================================================= */
+
+.publication-section + .publication-section {
+    padding-top: 80px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.publication-cta {
+    max-width: 1190px;
+
+    margin: 100px auto;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 18px;
+
+    background: #0d2940;
+
+    color: white;
+}
+
+.cta-content span {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #8fd8c9;
+}
+
+.cta-content h2 {
+    margin: 10px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+}
+
+.cta-content p {
+    max-width: 600px;
+
+    margin: 0;
+
+    line-height: 1.6;
+
+    color: #cbd5e1;
+}
+
+.cta-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    white-space: nowrap;
+
+    border-radius: 8px;
+
+    background: #0f766e;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+.cta-button:hover {
+    background: #128779;
+
+    transform: translateY(-2px);
+}
+
+.cta-button iconify-icon {
+    font-size: 18px;
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .publication-main {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .publication-main.reverse {
+        direction: ltr;
+    }
+
+    .publication-image {
+        height: 330px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .publication-cta {
+        margin: 70px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .publication-header {
+        padding: 90px 20px 40px;
+    }
+
+    .publication-header h1 {
+        font-size: 36px;
+    }
+
+    .publication-header p {
+        font-size: 14px;
+    }
+
+    .publication-section {
+        margin: 55px auto;
+
+        padding: 0 20px;
+    }
+
+    .publication-image {
+        height: 250px;
+
+        border-radius: 14px;
+    }
+
+    .publication-content h2 {
+        font-size: 28px;
+    }
+
+    .publication-content p {
+        font-size: 14px;
+    }
+
+    .publication-meta {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .info-card {
+        padding: 16px;
+    }
+
+    .description {
+        margin-top: 35px;
+    }
+
+    .publication-cta {
+        margin: 60px 20px;
+
+        padding: 30px 25px;
+    }
+
+    .cta-content h2 {
+        font-size: 25px;
+    }
+
+    .cta-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}

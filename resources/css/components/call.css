@@ -1,0 +1,149 @@
+.beranda3 {
+    min-height: 100vh;
+    display:grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 30px;
+    align-items: start;
+    padding: 120px 20px;
+}
+.form {
+    width: 100%;
+}
+.form-box {
+    min-height: 400px;
+    padding: 20px 30px;
+    border:1px solid #C3C6CE;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.form-box h2 {
+    margin: 0 0 18px;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+
+
+}
+.row {
+    border-top: 1px solid #00000060;
+    padding-top: 30px;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.row .form-group {
+    flex: 1 1 240px;
+    min-width: 0;
+}
+.row input {
+    flex: 1;
+    width: 100%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #43474D;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #C3C6CE;
+    border-radius: 3px;
+    background-color: #F8FAF8;
+    padding: 9px 10px;
+    font-size: 14px;
+    outline: none;
+    font-family: sans-serif;
+}
+.form-group input,
+.form-group select {
+    height: 36px;
+}
+.form-group textarea {
+    height: 90px;
+    resize: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0d806e;
+    background-color: #ffffff;
+}
+.form-box button {
+    padding: 10px 20px;
+    background-color: #116A5A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.form-box button:hover {
+    background-color: #F0EEE3;
+    color: #116A5A;
+}
+.call {
+    width: 100%;
+    min-height: 200px;
+    padding: 22px 18px;
+    box-sizing: border-box;
+    background-color: #031a2d;
+    border-radius: 7px;
+    color: white;
+}
+.call h2 {
+    margin: 0 0 18px;
+    font-size: 24px;
+    color: #ffffff;
+}
+.call  p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #314863;
+    margin-bottom: 60px;
+}
+.contact {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    column-gap: 10px;
+    margin-bottom: 18px;
+}
+.icon2 {
+    grid-row: span 2;
+    margin-top: 2px;
+    font-size: 30px;
+    color: #69DAB9;
+}
+.contact h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b9d2f1;
+}
+.contact p {
+    margin: 2px 0 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* ---------- Responsif: mencegah luap horizontal pada layar kecil ---------- */
+@media (max-width: 900px) {
+    .beranda3 {
+        grid-template-columns: 1fr;
+        padding: 72px 20px;
+    }
+
+    .row {
+        gap: 20px;
+    }
+}
